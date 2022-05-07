@@ -1,12 +1,15 @@
-h1,p{
-    text-align: center;
-}
-li:hover{
-background-position: 7px;
-background-color: rgb(255, 230, 230);
+
+div:hover{
+    padding: 10px;
+    background: rgb(0,206,255);
+background: linear-gradient(248deg, rgba(0,206,255,1) 0%, rgba(0,185,255,1) 0%, rgba(54,126,157,1) 25%, rgba(109,157,184,1) 66%, rgba(177,109,187,0.6166841736694677) 85%, rgba(0,95,255,0.8715861344537815) 100%);
+    border: 10px;
+    border-color: rgb(255, 0, 0);
 }
 
-li:active{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 77px;
+body div:nth-child(5){
+    background-color: black;
+}
+body div:nth-child(2n) h3{
+    font-size: 7px;
 }
