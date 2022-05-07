@@ -1,15 +1,27 @@
-
-div:hover{
-    padding: 10px;
-    background: rgb(0,206,255);
-background: linear-gradient(248deg, rgba(0,206,255,1) 0%, rgba(0,185,255,1) 0%, rgba(54,126,157,1) 25%, rgba(109,157,184,1) 66%, rgba(177,109,187,0.6166841736694677) 85%, rgba(0,95,255,0.8715861344537815) 100%);
-    border: 10px;
-    border-color: rgb(255, 0, 0);
+ol li:nth-child(2n-1){
+    text-transform: uppercase;
 }
-
-body div:nth-child(5){
-    background-color: black;
+li:hover{
+    background-color: blanchedalmond;
 }
-body div:nth-child(2n) h3{
-    font-size: 7px;
+h1 , h3{
+    color :red
+}
+h1 em,h3 em{
+    font-size:40px;
+    border: solid black 5px;
+}
+li{
+    font-size: 20px;
+}
+li em {
+    background-color: brown;
+    font-weight: 900;
+}
+/*body ul:nth-child(6) li:nth-child(-n+3){
+    background-color: blueviolet;
+}
+*/
+li::content('Java*'){
+    background-color:rgb(101, 101, 155);
 }
