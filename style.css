@@ -1,18 +1,40 @@
+
+*{
+    text-decoration: none;
+}
+a{
+    display: inline-block;
+    color: black;
+    padding: 4px;
+    background-color: aquamarine;
+    margin: 5px;
+    border:7px;
+}
+body{
+   background-color: beige;
+}
 #scientific_information{
     display: inline-block;
     position: relative;
     background-color: antiquewhite;
     float: right;
-    clear: left;
 }
 section img{
-    max-width: 500px;
+    max-width: 200px;
+    padding: 1px;
+    margin: 10px;
+}
+#paragrafo_socao{
+    display: inline-block;
+    float: right;
+    margin: 3vw;
+
 }
 
-#secao_soco{
-    display: block;
-background-image: url("https://mega.ibxk.com.br/2018/05/03/03121655347050.jpg");
-background-size: cover;
+#seca_soco{    
+    display: inline-block;
+    position: relative;
+    float:left;
 }
 
 main h1{
