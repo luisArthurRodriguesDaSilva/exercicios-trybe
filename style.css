@@ -1,0 +1,19 @@
+#scientific_information{
+    display: inline-block;
+    position: relative;
+    background-color: antiquewhite;
+    float: right;
+    clear: left;
+}
+section img{
+    max-width: 500px;
+}
+
+#secao_socao{
+
+    
+}
+
+main h1{
+    display: block;
+}
