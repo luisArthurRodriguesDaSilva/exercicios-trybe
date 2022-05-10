@@ -11,22 +11,28 @@ const roman_numbers={
     'l_':50000,
     'c_':100000,
 }
-const number='xxxx'
+const number='ix'
 
-const somar = (i)=>{somatorio+=roman_numbers[i]}
+let somatorio=0;
+const sumer = (i)=>{somatorio+=roman_numbers[number[i]]; return somatorio;}
 
-const translater=(number)=>{
-    let somatorio=0;
-    for(let i=0;i<=number.lenght;i++){
-        somar(i);
+    for(let i=0;i<=number.length-1;i++){
+
+        var act_let = roman_numbers[number[i]];
+        if(i==0){sumer(i)}
+        else {
+            var ant_let = roman_numbers[number[i-1]];
+            if(act_let > ant_let){
+                sumer(i);
+            somatorio-=2*ant_let;
+            console.log("ant_let=" + ant_let);
+            }else{sumer(i); console.log("im here bro");}
+        }
 
         console.log(i);
-        console.log(roman_numbers[i]);
         console.log(somatorio);
+
     }
-    return somatorio;
 
-}
 
-console.log(translater(number));
 console.log(roman_numbers['x']);
