@@ -1,4 +1,4 @@
-const arraio = [2, 3, 6, 7, 10, 1];
+const arraio = [2, 3, 6, 7..., 10, 1];
 
 const maior = (arai) =>{
     let indexOfMajor = 0;
