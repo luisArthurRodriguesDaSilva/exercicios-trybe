@@ -60,13 +60,13 @@
   </body>
   <script>
 
-      const criar_em = (a,b,local)=>{
-      const segun = document.querySelector(b);
+      const criar_em = (a,b)=>{
+      let segun = document.querySelector(b);
       segun.appendChild(document.createElement(a));
       document.querySelector(b + " " + a).innerText='AGA UM';
     }
    
-    criar_em('h1','body',1);
+    criar_em('h1','body');
 
     const bode=document.querySelector('body');
     const criar_ul = document.createElement('ul');
