@@ -13,8 +13,11 @@ const liOfMain = document.querySelectorAll('main ul li');
 // 2. Crie uma função que adicione a classe 'tech' ao elemento `li` quando for clicado.
 // 2.1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
 const selecting = (e) =>{
+    if(e.target.classList=='tech'){e.target.classList='';}
+    else{
     for(let i of e.target.parentNode.childNodes)i.classList='';
-    e.target.classList='tech'
+    e.target.classList='tech';
+    }
 }
     
 for(let i of liOfMain){
@@ -29,7 +32,7 @@ input.addEventListener('input',changeTextOfTech);
 // 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 // redirecione para alguma página;
 // 4.1. Que tal redirecionar para seu portfólio?
-
+//myWebpage.addEventListener('dblclick',goToMyPortfolio)
 // 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
 
