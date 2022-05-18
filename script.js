@@ -3,6 +3,7 @@ const secondLi = document.getElementById('second-li');
 const thirdLi = document.getElementById('third-li');
 const input = document.getElementById('input');
 const myWebpage = document.getElementById('my-spotrybefy');
+const liOfMain = document.querySelectorAll('main ul li');
 
 
 // 1. Copie esse arquivo e edite apenas ele;
@@ -11,7 +12,21 @@ const myWebpage = document.getElementById('my-spotrybefy');
 
 // 2. Crie uma função que adicione a classe 'tech' ao elemento `li` quando for clicado.
 // 2.1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
+const addTheClass = (e) =>{
+    console.log('passei em cima');
+    e.target.classList='tech'
+    console.log(e.target.classList)
+}
+const rmTheClass = (e) =>{
+    console.log('rapei');
+    e.target.classList=''
+    console.log(e.target.classList)
+}
 
+for(let i of liOfMain){
+i.addEventListener('mouseover',addTheClass);
+i.addEventListener('mouseleave',rmTheClass);
+}
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 // com a classe 'tech';
 
