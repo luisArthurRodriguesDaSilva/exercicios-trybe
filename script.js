@@ -5,7 +5,12 @@ const input = document.getElementById('input');
 const myWebpage = document.getElementById('my-spotrybefy');
 const liOfMain = document.querySelectorAll('main ul li');
 
-
+const resetText = (event) =>{
+  // O Event é passado como um parâmetro para a função.
+  event.target.innerText = 'Opção reiniciada';
+  // O event possui várias propriedades, porém a mais usada é o event.target,
+  // que retorna o objeto que disparou o evento.
+}
 // 1. Copie esse arquivo e edite apenas ele;
 // 1.1. Antes de começar os exercícios, use o LiveServer para dar uma olhada em como está a página no navegador.
 // 1.2. Note que uma das caixas está um pouco acima das outras. Por que isso ocorre?
@@ -13,11 +18,15 @@ const liOfMain = document.querySelectorAll('main ul li');
 // 2. Crie uma função que adicione a classe 'tech' ao elemento `li` quando for clicado.
 // 2.1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
 const selecting = (e) =>{
-    if(e.target.classList=='tech'){e.target.classList='';}
-    else{
+    if(e.target.classList=='tech'){e.target.classList=''; }
+    else
+    {
     for(let i of e.target.parentNode.childNodes)i.classList='';
     e.target.classList='tech';
     }
+
+const selecionado= document.querySelector('.tech');
+selecionado.addEventListener('dblclick', resetText);
 }
     
 for(let i of liOfMain){
@@ -50,14 +59,7 @@ myWebpage.addEventListener('mouseleave',returnColor);
 // Segue abaixo um exemplo do uso de event.target:
 
 
-function resetText(event) {
-  // O Event é passado como um parâmetro para a função.
-  event.target.innerText = 'Opção reiniciada';
-  // O event possui várias propriedades, porém a mais usada é o event.target,
-  // que retorna o objeto que disparou o evento.
-}
 
-firstLi.addEventListener('dblclick', resetText);
 
 // Não precisa passar o parâmetro dentro da callback resetText. O próprio
 // navegador fará esse trabalho por você, não é legal? Desse jeito, o
