@@ -15,26 +15,13 @@ function createDaysOfTheWeek() {
 };
 
 function createDaysOfThedaysOfTheWeek() {
-  for (i in weekDays){
-  const sday = document.createElement('ul');
-  sday.classList='sday';
-  const wday = document.querySelectorAll('.week-days li');
-  wday[i].appendChild(sday);
-  } 
-  for (i in weekDays){
-    for (let k=0;k<4;k+=1){
-    const nwday = document.querySelectorAll('.week-days li .sday');
-
-    if(typeof dezDaysList[i+(k*7)] == 'number'){
-    
-    const dday=document.createElement('li');
-    dday.classList = 'day';  
-    dday.style.display = 'block';
-    dday.innerHTML =  dezDaysList[i+(k*7)];
-    nwday[k].appendChild(dday);
-      }
-    }
+const weekDaysListobjs = document.querySelectorAll('.week-days li')
+  for (let i in weekDaysListobjs){
+    const ul_days =  document.createElement('ul');
+    ul_days.classList = weekDays[i] + '-days-list'; 
+    weekDaysListobjs[i].appendChild(ul_days);
   }
+  
 }
 
 
