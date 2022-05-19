@@ -21,10 +21,7 @@ function createDaysOfThedaysOfTheWeek() {
     i.appendChild(create_ul)
 }
 const position2 = document.querySelectorAll('.week-days li ul');
-for (let i of position2){
-  const create_li = document.createElement('li');
-  i.appendChild(create_li)
-}
+
 for (let i of position2){
   for(let k of dezDaysList){
       const create_li = document.createElement('li');
