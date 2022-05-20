@@ -1,6 +1,6 @@
-const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,01,02];
 const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
-
+const divOfHolydaysBtn = document.querySelector('.buttons-container')
 function createDaysOfTheWeek() {
   
   const weekDaysList = document.querySelector('.week-days');
@@ -22,19 +22,44 @@ function createDaysOfThedaysOfTheWeek() {
 }
 const position2 = document.querySelectorAll('.week-days li ul');
 
-for (let i of position2){
-  for(let k of dezDaysList){
+for (let i in position2){
+  for(let k in dezDaysList){
+    if(typeof dezDaysList[parseInt(k)*7+parseInt(i)] == 'number'){
+
       const create_li = document.createElement('li');
-      create_li.innerHTML=k;
-      i.appendChild(create_li)
-  }  
+      create_li.innerHTML=dezDaysList[parseInt(k)*7+parseInt(i)];
+      create_li.classList = 'day';
+      let parada =  dezDaysList[parseInt(k)*7+parseInt(i)];
+      if(parseInt(i) == 5) {create_li.classList += ' friday';}
+      if(parseInt(parada) == 24 || parseInt(parada)== 25 || parseInt(parada) == 31) {create_li.classList += ' holiday';}
+      position2[parseInt(i)].appendChild(create_li);
+    
+    }
+  }
 }
-numeros = document.querySelectorAll('.week-days li ul li')
-for (let num  of numeros){num.style.display = "block"}
-  
+numeros = document.querySelectorAll('.week-days li ul li');
+for (let num  of numeros){num.style.display = "block";}
 }
 
+const createBtnCalled= (nome) =>{
+  const create_btn = document.createElement('button')
+  create_btn.classList = 'btn-holiday';
+  create_btn.innerText = nome;
+  divOfHolydaysBtn.appendChild(create_btn);
+
+}
+
+const changeHolydaysColor = () =>{
+  const holidaysDays
+}
 
 createDaysOfTheWeek();
 createDaysOfThedaysOfTheWeek();
+createBtnCalled('Feriados');
+
+const btnOfHolidays = document.querySelector(".btn-holiday");
+btnOfHolidays.addEventListener("click",changeHolydaysColor)
+
+
+//for (let i of document.querySelectorAll)
 // Escreva seu código abaixo.
