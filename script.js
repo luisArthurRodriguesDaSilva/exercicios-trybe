@@ -49,25 +49,28 @@ const createBtnCalled= (nome,classe) =>{
 
 }
 
-const changeHolydaysColor = () =>{
-  let holidaysDays = document.querySelectorAll('.holiday');
-  for (let d in holidaysDays) {
-
-    if(((typeof holidaysDays[d].style.backgroundColor == 'undefined' || holidaysDays[d].style.backgroundColor == 'rgb(238, 238, 238)' || holidaysDays[d].style.backgroundColor == 'red' )&&( holidaysDays[(d+1)%2].style.backgroundColor == 'red' )|| holidaysDays[d].style.backgroundColor == 'rgb(238, 238, 238)')) holidaysDays[d].style.backgroundColor='green';
-    else holidaysDays[d].style.backgroundColor='rgb(238,238,238)';
-    console.log(holidaysDays[d].style.backgroundColor)
+const verifyExistence = (thing,arraio) =>{
+  for (let i of arraio){
+    if(thing == i) return true
   }
+  return false
 }
 
-const changeFridaysColor = () =>{
-  
-  let holidaysDays = document.querySelectorAll('.friday');
-  for (let d in holidaysDays)
-    if((typeof holidaysDays[d].style.backgroundColor == 'undefined' || holidaysDays[d].style.backgroundColor == 'rgb(238, 238, 238)' || holidaysDays[d].style.backgroundColor == 'green' )&&( holidaysDays[(d+1)%2].style.backgroundColor == 'green' || holidaysDays[d].style.backgroundColor == 'rgb(238, 238, 238)')) holidaysDays[d].style.backgroundColor='red';
-    else holidaysDays[d].style.backgroundColor='rgb(238,238,238)';
-    console.log(holidaysDays[d].style.backgroundColor)
-  }
+const changeHolydaysColor = () =>{
+  const holydays = document.querySelectorAll('.holiday');
+  for (let i of holydays){
+    if (verifyExistence('activholy',i.classList) )i.classList.remove('activholy');
+    else i.classList.add('activholy');}
+}
 
+
+const changeFridaysColor = () =>{
+  const fridays = document.querySelectorAll('.friday');
+  for (let i of fridays){
+    if (verifyExistence('activfri',i.classList) )i.classList.remove('activfri');
+    else i.classList.add('activfri');}
+
+}
 
 createDaysOfTheWeek();
 createDaysOfThedaysOfTheWeek();
@@ -76,12 +79,7 @@ createBtnCalled('sextou','btn-friday')
 
 
 const btnOfHolidays = document.querySelector(".btn-holiday");
-btnOfHolidays.addEventListener("click",changeHolydaysColor)
+btnOfHolidays.addEventListener("click",changeHolydaysColor);
 
 const btnOfFridays = document.querySelector(".btn-friday");
 btnOfFridays.addEventListener("click",changeFridaysColor);
-
-
-
-//for (let i of document.querySelectorAll)
-// Escreva seu código abaixo.
