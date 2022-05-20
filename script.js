@@ -50,27 +50,23 @@ const createBtnCalled= (nome,classe) =>{
 }
 
 const changeHolydaysColor = () =>{
-  const holidaysDays = document.querySelectorAll('.holiday');
-  for (let d of holidaysDays) {
+  let holidaysDays = document.querySelectorAll('.holiday');
+  for (let d in holidaysDays) {
 
-    console.log(d.style.backgroundColor)
-    if(d.style.backgroundColor == 'rgb(238, 238, 238)') d.style.backgroundColor='green';
-    else d.style.backgroundColor='rgb(238,238,238)';
-    console.log(d.style.backgroundColor)
+    if(((typeof holidaysDays[d].style.backgroundColor == 'undefined' || holidaysDays[d].style.backgroundColor == 'rgb(238, 238, 238)' || holidaysDays[d].style.backgroundColor == 'red' )&&( holidaysDays[(d+1)%2].style.backgroundColor == 'red' )|| holidaysDays[d].style.backgroundColor == 'rgb(238, 238, 238)')) holidaysDays[d].style.backgroundColor='green';
+    else holidaysDays[d].style.backgroundColor='rgb(238,238,238)';
+    console.log(holidaysDays[d].style.backgroundColor)
   }
 }
 
 const changeFridaysColor = () =>{
   
-  const holidaysDays = document.querySelectorAll('.friday');
-  for (let d of holidaysDays) {
-
-    console.log(d.style.backgroundColor)
-    if(d.style.backgroundColor == 'rgb(238, 238, 238)' || d.style.backgroundColor == 'green') d.style.backgroundColor='red';
-    else d.style.backgroundColor='rgb(238,238,238)';
-    console.log(d.style.backgroundColor)
+  let holidaysDays = document.querySelectorAll('.friday');
+  for (let d in holidaysDays)
+    if((typeof holidaysDays[d].style.backgroundColor == 'undefined' || holidaysDays[d].style.backgroundColor == 'rgb(238, 238, 238)' || holidaysDays[d].style.backgroundColor == 'green' )&&( holidaysDays[(d+1)%2].style.backgroundColor == 'green' || holidaysDays[d].style.backgroundColor == 'rgb(238, 238, 238)')) holidaysDays[d].style.backgroundColor='red';
+    else holidaysDays[d].style.backgroundColor='rgb(238,238,238)';
+    console.log(holidaysDays[d].style.backgroundColor)
   }
-}
 
 
 createDaysOfTheWeek();
