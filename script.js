@@ -60,6 +60,19 @@ const changeHolydaysColor = () =>{
   }
 }
 
+const changeFridaysColor = () =>{
+  
+  const holidaysDays = document.querySelectorAll('.friday');
+  for (let d of holidaysDays) {
+
+    console.log(d.style.backgroundColor)
+    if(d.style.backgroundColor == 'rgb(238, 238, 238)' || d.style.backgroundColor == 'green') d.style.backgroundColor='red';
+    else d.style.backgroundColor='rgb(238,238,238)';
+    console.log(d.style.backgroundColor)
+  }
+}
+
+
 createDaysOfTheWeek();
 createDaysOfThedaysOfTheWeek();
 createBtnCalled('Feriados','btn-holiday');
@@ -68,6 +81,10 @@ createBtnCalled('sextou','btn-friday')
 
 const btnOfHolidays = document.querySelector(".btn-holiday");
 btnOfHolidays.addEventListener("click",changeHolydaysColor)
+
+const btnOfFridays = document.querySelector(".btn-friday");
+btnOfFridays.addEventListener("click",changeFridaysColor);
+
 
 
 //for (let i of document.querySelectorAll)
