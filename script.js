@@ -41,21 +41,30 @@ numeros = document.querySelectorAll('.week-days li ul li');
 for (let num  of numeros){num.style.display = "block";}
 }
 
-const createBtnCalled= (nome) =>{
+const createBtnCalled= (nome,classe) =>{
   const create_btn = document.createElement('button')
-  create_btn.classList = 'btn-holiday';
+  create_btn.classList = classe;
   create_btn.innerText = nome;
   divOfHolydaysBtn.appendChild(create_btn);
 
 }
 
 const changeHolydaysColor = () =>{
-  const holidaysDays
+  const holidaysDays = document.querySelectorAll('.holiday');
+  for (let d of holidaysDays) {
+
+    console.log(d.style.backgroundColor)
+    if(d.style.backgroundColor == 'rgb(238, 238, 238)') d.style.backgroundColor='green';
+    else d.style.backgroundColor='rgb(238,238,238)';
+    console.log(d.style.backgroundColor)
+  }
 }
 
 createDaysOfTheWeek();
 createDaysOfThedaysOfTheWeek();
-createBtnCalled('Feriados');
+createBtnCalled('Feriados','btn-holiday');
+createBtnCalled('sextou','btn-friday')
+
 
 const btnOfHolidays = document.querySelector(".btn-holiday");
 btnOfHolidays.addEventListener("click",changeHolydaysColor)
