@@ -26,6 +26,9 @@
   #days {
     margin: 0;
   }
+  .my-tasks h4{
+    text-decoration: none;
+  }
   
   #days li {
     color: #777;
@@ -109,13 +112,22 @@
     width: 100%;
   }
   
-  .tasks-container h3 {
+  .tasks-container h3{
     color: #666;
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 20px;
     text-decoration: underline;
     letter-spacing: 3px;
+  }
+  .my-tasks a{
+    color: #666;
+    font-weight: 500;
+    letter-spacing: 2px;
+    display: block;
+  }
+  .selected{
+    background-color: red;
   }
   
   .task-list {
