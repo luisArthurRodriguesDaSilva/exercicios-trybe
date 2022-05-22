@@ -52,6 +52,20 @@ const createBtnCalled= (nome,classe) =>{
   divOfHolydaysBtn.appendChild(create_btn);
 
 }
+const createTaskInput= () =>{
+
+  const create_task = document.createElement('input')
+  create_task.classList = 'input_of_task';
+  create_task.placeholder = 'tasks';
+  create_task.style.display =  'block';
+  document.querySelector('.input-container').appendChild(create_task);
+  const buttonAddTask = document.createElement('button');
+  buttonAddTask.innerText='add task';
+  buttonAddTask.classList.add('btn-add-task');
+  document.querySelector('.input-container').appendChild(buttonAddTask);
+
+
+}
 
 const verifyExistence = (thing,arraio) =>{
   for (let i of arraio){
@@ -86,6 +100,8 @@ createDaysOfTheWeek();
 createDaysOfThedaysOfTheWeek();
 createBtnCalled('Feriados','btn-holiday');
 createBtnCalled('sextou','btn-friday');
+createTaskInput()
+
 
 
 const btnOfHolidays = document.querySelector(".btn-holiday");
@@ -94,9 +110,20 @@ btnOfHolidays.addEventListener("click",changeHolydaysColor);
 const btnOfFridays = document.querySelector(".btn-friday");
 btnOfFridays.addEventListener("click",changeFridaysColor);
 
+const changeColorAccordingToTheTasks = (e) =>{
+  if(verifyExistence('selected',e.target.classList)){e.target.classList.remove('selected')}
+  else{
+  for(let i of document.querySelectorAll('.task'))
+    if(verifyExistence('selected',i.classList)){ 
+      if(verifyExistence('selected',e.target.classList)){e.target.classList.remove('selected')}
+      else e.target.classList.add('selected')
+    }
+  }
+}
 const allnumbersdays = document.querySelectorAll('.day'); //colocar aqui funciona
 for(let i of allnumbersdays){
   i.addEventListener('mouseover',makeItBigger);
+  i.addEventListener('click',changeColorAccordingToTheTasks);
   i.addEventListener('mouseleave',makeItsNormal);
 }
 
@@ -122,6 +149,13 @@ const tasks= document.querySelectorAll('.task');
 for(let i of tasks){
   i.addEventListener('click',changeColorOfTasks);
 }
+
+const addtaskByBtn = () =>{
+  const task = document.querySelector('.input_of_task');
+  addTask(task.textContent)
+}
+const taskbtn = document.querySelector('.btn-add-task');
+taskbtn.addEventListener('click',addtaskByBtn)
 
 
 

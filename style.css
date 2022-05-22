@@ -127,7 +127,8 @@
     display: block;
   }
   .selected{
-    background-color: red;
+    background: rgb(0,206,255);
+background: linear-gradient(248deg, rgba(0,206,255,1) 0%, rgba(0,185,255,1) 0%, rgba(54,126,157,1) 25%, rgba(109,157,184,1) 66%, rgba(177,109,187,0.6166841736694677) 85%, rgba(0,95,255,0.8715861344537815) 100%);
   }
   
   .task-list {
