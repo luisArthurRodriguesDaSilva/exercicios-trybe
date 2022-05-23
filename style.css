@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(255, 255, 255);
+    transition: all 1s;
+}
+
+.material-symbols-outlined {
+    color: rgb(0, 0, 0)    ;
+
+  transition: all 2s;
+  
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 100,
+  'GRAD' -25,
+  'opsz' 48,
+}
