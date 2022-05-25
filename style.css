@@ -1,6 +1,9 @@
 body{
     background-color: rgb(255, 255, 255);
     transition: all 0.35s;
+    display:flex ;
+    flex-direction: column;
+    gap: 10vh;
 }
 
 #dark-light{
@@ -12,6 +15,40 @@ body{
   background-color: #c0e4e42f;
   border: 3px solid #dbe4ed;
   border-radius:10px ;
+}
+
+#to_divide{
+display: flex;
+align-items: center;
+flex-direction: row;
+justify-content:space-around;
+
+}
+
+#drawContainer{
+  border: solid black 1px;
+  height: auto;
+  width: 75vh;
+  display: inline-block;
+  flex-direction: column;
+  padding: 0%;
+  margin: 0%;
+}
+
+.lik{
+margin: 0%;
+padding: 0%;
+height: auto;
+height: 15vh;
+}
+
+.divs-internas{
+  width: 15vh;
+  height: 15vh;
+  display: inline-block;
+  background-color: aqua;
+  margin: 0px;
+  padding: 0px;
 }
 
 .material-symbols-outlined {

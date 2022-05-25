@@ -45,3 +45,26 @@ const changeDarkLightMode = (e) =>{
 
 
 darkLight.addEventListener('click',changeDarkLightMode);
+
+const create_square = () =>{
+    var k = 0;
+    const caixona = document.querySelector('#drawContainer');
+    for (let i = 0;i<25;i+=1){
+        if(i%5 == 0 || i==0){
+            k+=1;
+                const createLi = document.createElement('div');
+                createLi.classList.add('lik');
+                caixona.appendChild(createLi);
+        }
+        let li_atual = document.querySelectorAll('.lik')[k-1];
+        const createDiv = document.createElement('div');
+        createDiv.classList.add('divs-internas');
+        li_atual.appendChild(createDiv);
+        
+    }}
+
+create_square();
+
+for (let i of document.querySelectorAll('.lik')){
+    i.addEventListener('click',(e)=>{e.target.style.background = 'red'; changeDarkLightMode()})
+}
