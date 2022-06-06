@@ -1,0 +1,7 @@
+body{
+  background: blue;
+}
+
+section{
+  flex-wrap: nowrap;
+}
