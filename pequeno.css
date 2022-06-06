@@ -1,0 +1,9 @@
+body{
+  background-color: rgb(226, 43, 43);
+}
+
+header{
+  position: fixed;
+  background: blue;
+  border-radius: 20px;
+}
