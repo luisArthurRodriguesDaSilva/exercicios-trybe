@@ -1,0 +1,11 @@
+:root {
+  --frister-color: #ffd900;
+  --frister-color-dark: #665353;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--frister-color-dark);
+}
