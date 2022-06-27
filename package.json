@@ -1,0 +1,23 @@
+{
+  "name": "exercicios-trybe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisArthurRodriguesDaSilva/exercicios-trybe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luisArthurRodriguesDaSilva/exercicios-trybe/issues"
+  },
+  "homepage": "https://github.com/luisArthurRodriguesDaSilva/exercicios-trybe#readme",
+  "devDependencies": {
+    "jest": "^28.1.1"
+  }
+}
